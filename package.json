@@ -1,0 +1,24 @@
+{
+  "name": "lambda_alexa_skill_repoman",
+  "version": "1.0.0",
+  "description": "Alexa Skill Lambda for Repoman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armandopadilla/lambda_alexa_skill_repoman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armandopadilla/lambda_alexa_skill_repoman/issues"
+  },
+  "homepage": "https://github.com/armandopadilla/lambda_alexa_skill_repoman#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.10",
+    "bluebird": "^3.5.0",
+    "github": "^9.2.0"
+  }
+}

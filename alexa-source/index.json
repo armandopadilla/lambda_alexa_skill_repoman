@@ -1,0 +1,1274 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "ClosePRIntent",
+      "samples": [
+        "close {PR_UTTERANCES}  {PR_NUMBER} on repo {REPO_NAME}",
+        "to close {PR_UTTERANCES} {PR_NUMBER} on repo {REPO_NAME}"
+      ],
+      "slots": [
+        {
+          "name": "PR_UTTERANCES",
+          "type": "PR_UTTERANCE_TYPE",
+          "samples": []
+        },
+        {
+          "name": "PR_NUMBER",
+          "type": "PR_NUMBER_TYPE",
+          "samples": [
+            "{PR_UTTERANCES} {PR_NUMBER}",
+            "{PR_NUMBER}",
+            "on {PR_UTTERANCES} {PR_NUMBER}"
+          ]
+        },
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "{REPO_NAME}",
+            "on repo {REPO_NAME}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CreateBranchIntent",
+      "samples": [
+        "create branch {BRANCH_NAME} from {BASE_BRANCH_NAME} on repo {REPO_NAME}",
+        "create {BRANCH_GEN_TOKEN} branch {BRANCH_NAME}  {BASE_BRANCH_NAME} on repo {REPO_NAME}"
+      ],
+      "slots": [
+        {
+          "name": "BRANCH_NAME",
+          "type": "BRANCH_NAME_TYPE",
+          "samples": [
+            "{BRANCH_NAME}",
+            "branch {BRANCH_NAME}"
+          ]
+        },
+        {
+          "name": "BASE_BRANCH_NAME",
+          "type": "BASE_BRANCH_NAME_TYPE",
+          "samples": [
+            "{BASE_BRANCH_NAME}"
+          ]
+        },
+        {
+          "name": "BRANCH_GEN_TOKEN",
+          "type": "BRANCH_GEN_TOKEN_TYPE",
+          "samples": []
+        },
+        {
+          "name": "BRANCH_GEN_TOKEN_FROM_USING",
+          "type": "BRANCH_GEN_TOKEN_FROM_USING_TYPE",
+          "samples": []
+        },
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "{REPO_NAME}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CreateRepoIntent",
+      "samples": [
+        "to create a new {REPO_PRIVACY_SETTING} repo {REPO_NAME}",
+        "to create a new {REPO_PRIVACY_SETTING} repo named {REPO_NAME}",
+        "to create a new {REPO_PRIVACY_SETTING} repo called {REPO_NAME}",
+        "create a new repo {REPO_NAME}",
+        "create repo {REPO_NAME}",
+        "create {REPO_PRIVACY_SETTING} repo {REPO_NAME}",
+        "create repo {REPO_NAME} as {REPO_PRIVACY_SETTING}",
+        "to create a new {REPO_PRIVACY_SETTING} repo for me",
+        "go ahead and create a {REPO_PRIVACY_SETTING} repo for me",
+        "to set up a new {REPO_PRIVACY_SETTING} repo for me"
+      ],
+      "slots": [
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "{REPO_NAME}",
+            "repo {REPO_NAME}"
+          ]
+        },
+        {
+          "name": "REPO_PRIVACY_SETTING",
+          "type": "REPO_PRIVACY_SETTING_TYPE",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "GetPRCountIntent",
+      "samples": [
+        "how many {PR_STATUS} P R are there on repo {REPO_NAME}",
+        "give me a count of {PR_STATUS} P R on repo {REPO_NAME}",
+        "how many {PR_STATUS} pull requests are there on repo {REPO_NAME}",
+        "for the {PR_STATUS} P R count on repo {REPO_NAME}",
+        "can you tell me how many {PR_STATUS} on repo {REPO_NAME} there are",
+        "lets get the total number of {PR_STATUS} pull requests on repo {REPO_NAME}",
+        "how many {PR_STATUS} P R are there"
+      ],
+      "slots": [
+        {
+          "name": "PR_STATUS",
+          "type": "PR_STATUS_TYPE",
+          "samples": []
+        },
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "on repo {REPO_NAME}",
+            "repo {REPO_NAME}",
+            "{REPO_NAME}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetPRStatusIntent",
+      "samples": [
+        "to get the status of PR {PR_NUMBER} on repo {REPO_NAME}",
+        "what's the status of PR {PR_NUMBER} on repo {REPO_NAME}"
+      ],
+      "slots": [
+        {
+          "name": "PR_NUMBER",
+          "type": "PR_NUMBER_TYPE",
+          "samples": [
+            "P R number {PR_NUMBER}",
+            "{PR_NUMBER}",
+            "number {PR_NUMBER}"
+          ]
+        },
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "repo {REPO_NAME}",
+            "{REPO_NAME}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MergeBranchesIntent",
+      "samples": [
+        "merge {MERGE_FROM_BRANCH_NAME} into {MERGE_TO_BRANCH_NAME} on repo {REPO_NAME}",
+        "merge {MERGE_FROM_BRANCH_NAME} into {MERGE_TO_BRANCH_NAME}"
+      ],
+      "slots": [
+        {
+          "name": "MERGE_FROM_BRANCH_NAME",
+          "type": "MERGE_FROM_BRANCH_NAME_TYPE",
+          "samples": [
+            "{MERGE_FROM_BRANCH_NAME}"
+          ]
+        },
+        {
+          "name": "MERGE_TO_BRANCH_NAME",
+          "type": "MERGE_TO_BRANCH_NAME_TYPE",
+          "samples": [
+            "branch {MERGE_TO_BRANCH_NAME}",
+            "{MERGE_TO_BRANCH_NAME}"
+          ]
+        },
+        {
+          "name": "REPO_NAME",
+          "type": "REPO_NAME_TYPE",
+          "samples": [
+            "{REPO_NAME}"
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "BASE_BRANCH_NAME_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "master",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "production",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "staging",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "develop",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "echo underscore 123",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "feature forward slash 123",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "stage",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "something dash food",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "BRANCH_GEN_TOKEN_FROM_USING_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "using",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "from",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "BRANCH_GEN_TOKEN_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "a new",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "new",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "a",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "BRANCH_NAME_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "develop",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "staging",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "echo underscore help",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "feature forward slash somethingnew",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "feature",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "uncle",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERGE_FROM_BRANCH_NAME_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "cat",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "dog",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "number",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "one",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "feature underscore today",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "feature underscore awesome",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "something dash really cool dash",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "staging",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "develop",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "qa",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERGE_TO_BRANCH_NAME_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "qa",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "dev",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "develop",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "staging",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "stage",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "prod",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "production",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "rc",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "release candidate ",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "master",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "release forward slash 1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "branch underscore twenty",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "PR_NUMBER_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "2",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "123",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "134545",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "56757768",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "3",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "34",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "PR_STATUS_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "all",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "open",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "closed",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "PR_UTTERANCE_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "P R",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Pull Request",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "PR",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "REPO_NAME_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "repo1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "repo2",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "repo3",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "reponame",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "lambda ",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "something underscore adf",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "cat",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "dog",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "dodge",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "weird forward slash today ",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "interesting dash comic 1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "interesting dash comic",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "1 2 3",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "123",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "3",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "4",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "6",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "armando 123",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "",
+          "name": {
+            "value": "armando 1",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "armando",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "REPO_PRIVACY_SETTING_TYPE",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "private",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "public",
+            "synonyms": []
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-ClosePRIntent.IntentSlot-PR_NUMBER",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which P R number?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ClosePRIntent.IntentSlot-PR_NUMBER",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  Close P R {PR_NUMBER}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ClosePRIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "On which repo?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ClosePRIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok. On repo {REPO_NAME} ?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateBranchIntent.IntentSlot-BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What branch name?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-CreateBranchIntent.IntentSlot-BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  You want to create a new branch, {BRANCH_NAME}"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateBranchIntent.IntentSlot-BASE_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is the base branch you want to use?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-CreateBranchIntent.IntentSlot-BASE_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  Create the branch {BRANCH_NAME} from {BASE_BRANCH_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateBranchIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "From which repo?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-CreateBranchIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  Create {BRANCH_NAME} from {BASE_BRANCH_NAME} in repo {REPO_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-CreateRepoIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What do you want to name the repo?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-CreateRepoIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Got it.   Create {REPO_PRIVACY_SETTING} repo {REPO_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetPRCountIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "On which repo?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetPRCountIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "OK. Get total pull requests, on repo {REPO_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetPRStatusIntent.IntentSlot-PR_NUMBER",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "what P R number?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetPRStatusIntent.IntentSlot-PR_NUMBER",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  Get the status for P R {PR_NUMBER} ?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetPRStatusIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "For what repo?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetPRStatusIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  On repo {REPO_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-MergeBranchesIntent.IntentSlot-MERGE_FROM_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What branch you want to merge?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-MergeBranchesIntent.IntentSlot-MERGE_FROM_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  Your branch is {MERGE_FROM_BRANCH_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-MergeBranchesIntent.IntentSlot-MERGE_TO_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What branch are you merging into?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-MergeBranchesIntent.IntentSlot-MERGE_TO_BRANCH_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  You want to merge into {MERGE_TO_BRANCH_NAME}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-MergeBranchesIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What repo you want to do the merging?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-MergeBranchesIntent.IntentSlot-REPO_NAME",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Ok.  In repo {REPO_NAME}?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "ClosePRIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "PR_UTTERANCES",
+            "type": "PR_UTTERANCE_TYPE",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "PR_NUMBER",
+            "type": "PR_NUMBER_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ClosePRIntent.IntentSlot-PR_NUMBER",
+              "confirm": "Confirm.Intent-ClosePRIntent.IntentSlot-PR_NUMBER"
+            }
+          },
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ClosePRIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-ClosePRIntent.IntentSlot-REPO_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CreateBranchIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "BRANCH_NAME",
+            "type": "BRANCH_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateBranchIntent.IntentSlot-BRANCH_NAME",
+              "confirm": "Confirm.Intent-CreateBranchIntent.IntentSlot-BRANCH_NAME"
+            }
+          },
+          {
+            "name": "BASE_BRANCH_NAME",
+            "type": "BASE_BRANCH_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateBranchIntent.IntentSlot-BASE_BRANCH_NAME",
+              "confirm": "Confirm.Intent-CreateBranchIntent.IntentSlot-BASE_BRANCH_NAME"
+            }
+          },
+          {
+            "name": "BRANCH_GEN_TOKEN",
+            "type": "BRANCH_GEN_TOKEN_TYPE",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "BRANCH_GEN_TOKEN_FROM_USING",
+            "type": "BRANCH_GEN_TOKEN_FROM_USING_TYPE",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateBranchIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-CreateBranchIntent.IntentSlot-REPO_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CreateRepoIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-CreateRepoIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-CreateRepoIntent.IntentSlot-REPO_NAME"
+            }
+          },
+          {
+            "name": "REPO_PRIVACY_SETTING",
+            "type": "REPO_PRIVACY_SETTING_TYPE",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      },
+      {
+        "name": "GetPRCountIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "PR_STATUS",
+            "type": "PR_STATUS_TYPE",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          },
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetPRCountIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-GetPRCountIntent.IntentSlot-REPO_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetPRStatusIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "PR_NUMBER",
+            "type": "PR_NUMBER_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetPRStatusIntent.IntentSlot-PR_NUMBER",
+              "confirm": "Confirm.Intent-GetPRStatusIntent.IntentSlot-PR_NUMBER"
+            }
+          },
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-GetPRStatusIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-GetPRStatusIntent.IntentSlot-REPO_NAME"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MergeBranchesIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "MERGE_FROM_BRANCH_NAME",
+            "type": "MERGE_FROM_BRANCH_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-MergeBranchesIntent.IntentSlot-MERGE_FROM_BRANCH_NAME",
+              "confirm": "Confirm.Intent-MergeBranchesIntent.IntentSlot-MERGE_FROM_BRANCH_NAME"
+            }
+          },
+          {
+            "name": "MERGE_TO_BRANCH_NAME",
+            "type": "MERGE_TO_BRANCH_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-MergeBranchesIntent.IntentSlot-MERGE_TO_BRANCH_NAME",
+              "confirm": "Confirm.Intent-MergeBranchesIntent.IntentSlot-MERGE_TO_BRANCH_NAME"
+            }
+          },
+          {
+            "name": "REPO_NAME",
+            "type": "REPO_NAME_TYPE",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-MergeBranchesIntent.IntentSlot-REPO_NAME",
+              "confirm": "Confirm.Intent-MergeBranchesIntent.IntentSlot-REPO_NAME"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
