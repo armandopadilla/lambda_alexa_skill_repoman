@@ -5,6 +5,9 @@ Alexa Skill - My Repo Manager. - Manage your github account using Alexa!
 This guide outlines the technology, installation steps, 
 what can be done with the tool, and a few other things.
 
+## Example Use
+https://www.youtube.com/watch?v=NPX0irt7jT0
+
 ## Architecture & Tech
 ### Architecture
 Intent Flow
